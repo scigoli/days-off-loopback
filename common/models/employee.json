@@ -1,0 +1,47 @@
+{
+  "name": "Employee",
+  "plural": "Employees",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "DepartmentId": {
+      "type": "number",
+      "required": true
+    },
+    "IsManager": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "requests": {
+      "type": "hasMany",
+      "model": "Request",
+      "foreignKey": "OwnRequests"
+    },
+    "employees": {
+      "type": "hasOne",
+      "model": "Employee",
+      "foreignKey": "ReportTo"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}
