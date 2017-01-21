@@ -2,18 +2,26 @@
 Server side application running on Loopback with data persisted on MongoDB. 
 
 ## Test days-off-loopback on your local machine
-1. Install MongoDB on your machine, create an empty DB called days-off and run the MongoDB instance
-2. clone this days-off-loopback repository
+1. Install MongoDB on your machine, run the MongoDB instance and create an empty DB called days-off
+2. clone this days-off-loopback repository on your local machine
 3. move to the folder you have just downloaded
 4. run ```npm install``` to install the required node modules
 5. run ```node .``` to launch the application
 6. check out and test the API methods on http://localhost:3000/explorer
 
 ## Check out the cloud version on IBM Bluemix
-Moving to IBM Bluemix is pretty easy, all you need is 
-* getting a Bluemix account
-* adding a manifest.yml file
-* replacing a local DB with a Cloud DB (e.g. Cloudant)
+Moving days-off-loopback to IBM Bluemix is pretty easy, all you need is to do is following this procedure:
+
+On IBM Bluemix
+* get a Bluemix account
+* add a Loopback Starter application (e.g. ```days-off```)
+* add a Cloudant NoSQL DB service and create a database
+* get the "Cloud Foundry" tools from the "Getting started" page
+
+On your local machine
+* add a manifest.yml file to your copy of days-off-loopback
+* replace any reference to your local MongoDB instance with the credentials of a Cloud DB (e.g. Cloudant)
+* push your application to IBM Bluemix using Cloud Foundry. E.g. ```cf push days-off```
 
 ### My Bluemix account
 I have activated a trial using a promotional code and it will expire in June 2017. Some of the links provided below may be no longer valid after that date.
@@ -22,7 +30,7 @@ I have activated a trial using a promotional code and it will expire in June 201
 Manifest.yml is used by IBM Bluemix to understand how the application is configured.
 More details on https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html.
 This is an example of manifest.yml
-```javascript
+```
 applications:
 - path: .
   memory: 1024M
@@ -43,7 +51,7 @@ The cloud version of this application persists data on Cloudant, which is a "Dat
 
 * Get the credentials from "Cloud Foundry Apps > Connections > View Connections". You will get something like this
 
-```javascript
+```
 {
   "cloudantNoSQLDB": {
     "name": "Cloudant-3s",
