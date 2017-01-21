@@ -16,10 +16,10 @@ Moving to IBM Bluemix is pretty easy, all you need is
 * replacing a local DB with a Cloud DB (e.g. Cloudant)
 
 ### My Bluemix account
-I have activated a trial using a promotional code and it will expire in June 2017. Some of the links provided below may not be longer valid after that date.
+I have activated a trial using a promotional code and it will expire in June 2017. Some of the links provided below may be no longer valid after that date.
 
 ### Adding manifest.yml
-Manifest.yml is used by Bluemix to 
+Manifest.yml is used by IBM Bluemix to understand how the application is configured.
 More details on https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html.
 This is an example of manifest.yml
 ```javascript
@@ -35,7 +35,7 @@ applications:
 ```
 
 ### Using Cloudant instead of MongoDB
-The cloud version of this application persist data on Cloudant, which is a "Database As A Service" provided by IBM Bluemix. Moving a Loopback application from MongoDB to Cloudant is pretty straightforward. 
+The cloud version of this application persists data on Cloudant, which is a "Database As A Service" provided by IBM Bluemix. Moving a Loopback application from MongoDB to Cloudant is pretty straightforward. 
 
 * Create a Cloudant DBAAS application, enter its specific dashboard and create a database (e.g. "days-off")
 
